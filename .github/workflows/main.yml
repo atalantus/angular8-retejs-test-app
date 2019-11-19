@@ -31,7 +31,7 @@ jobs:
       - name: Run lint checks
         run: npm run lint
       ## karma unit tests
-      - name: Run karma unit tests
+      - name: Run unit tests
         run: npm test -- --configuration=ci
       ## developer build
       - name: Run dev build
@@ -39,3 +39,6 @@ jobs:
       ## production build
       - name: Run prod build
         run: npm run build -- --prod
+      ## protractor end-to-end tests
+      - name: Run e2e tests
+        run: npm run e2e -- --configuration=ci
