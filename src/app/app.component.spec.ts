@@ -3,6 +3,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 import {MatToolbarModule} from '@angular/material';
 import {NodeEditorComponent} from './components/node-editor/node-editor.component';
+import {ReteComponent} from './rete/rete.component';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -13,7 +14,8 @@ describe('AppComponent', () => {
       ],
       declarations: [
         AppComponent,
-        NodeEditorComponent
+        NodeEditorComponent,
+        ReteComponent
       ],
     }).compileComponents();
   }));

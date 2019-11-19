@@ -1,16 +1,20 @@
 import { AppPage } from './app.po';
-import { browser, logging } from 'protractor';
+import {browser, by, element, logging} from 'protractor';
 
 describe('workspace-project App', () => {
   let page: AppPage;
 
   beforeEach(() => {
     page = new AppPage();
+    page.navigateTo();
   });
 
   it('should display toolbar', () => {
-    page.navigateTo();
     expect(page.getTitleText()).toEqual('Rete.js Test App');
+  });
+
+  it('should render rete-element', () => {
+    expect(element(by.tagName('rete-element')));
   });
 
   afterEach(async () => {

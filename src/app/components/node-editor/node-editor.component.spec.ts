@@ -1,6 +1,7 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { NodeEditorComponent } from './node-editor.component';
+import {NodeEditorComponent} from './node-editor.component';
+import {ReteComponent} from '../../rete/rete.component';
 
 describe('NodeEditorComponent', () => {
   let component: NodeEditorComponent;
@@ -8,9 +9,12 @@ describe('NodeEditorComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NodeEditorComponent ]
+      declarations: [
+        NodeEditorComponent,
+        ReteComponent
+      ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
