@@ -8,16 +8,31 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v1
-    - name: set up node.js
-      uses: actions/setup-node@v1
-      with:
-        node-version: 13.1
-    - name: install dependencies
-      run: npm install
-    - name: lint
-      run: npm run lint
-    - name: dev build
-      run: npm run build
-    - name: prod build
-      run: npm run build -- --prod
+      - uses: actions/checkout@v1
+      ## cache dependencies
+      - name: Cache dependencies
+        uses: actions/cache@v1
+        with:
+          path: node_modules
+          key: ${{ runner.OS }}-build-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.OS }}-build-${{ env.cache-name }}-
+            ${{ runner.OS }}-build-
+            ${{ runner.OS }}-
+      ## set up node.js
+      - name: set up node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 13.1
+      ## install dependencies
+      - name: install dependencies
+        run: npm install
+      ## lint check
+      - name: lint
+        run: npm run lint
+      ## developer build
+      - name: dev build
+        run: npm run build
+      ## production build
+      - name: prod build
+        run: npm run build -- --prod
