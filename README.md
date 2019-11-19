@@ -1,4 +1,4 @@
-# Angular8RetejsTestApp ![https://github.com/atalantus/angular8-retejs-test-app/actions](https://github.com/atalantus/angular8-retejs-test-app/workflows/ci%20tests/badge.svg)
+# Angular8RetejsTestApp [![](https://github.com/atalantus/angular8-retejs-test-app/workflows/ci%20tests/badge.svg)](https://github.com/atalantus/angular8-retejs-test-app/actions)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.19.
 
