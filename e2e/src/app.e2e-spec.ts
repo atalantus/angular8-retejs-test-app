@@ -8,9 +8,9 @@ describe('workspace-project App', () => {
     page = new AppPage();
   });
 
-  it('should display welcome message', () => {
+  it('should display toolbar', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('angular8-retejs-test-app app is running!');
+    expect(page.getTitleText()).toEqual('Rete.js Test App');
   });
 
   afterEach(async () => {
