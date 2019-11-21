@@ -7,10 +7,7 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e",
-    "install-rete-lib": "cd ./node_modules/rete-angular-render-plugin && npm install",
-    "build-rete-lib": "cd ./node_modules/rete-angular-render-plugin && npm run build",
-    "setup-rete-lib": "npm run install-rete-lib && npm run build-rete-lib"
+    "e2e": "ng e2e"
   },
   "private": true,
   "dependencies": {
