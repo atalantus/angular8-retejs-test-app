@@ -12,16 +12,6 @@ jobs:
         with:
           repository: atalantus/angular-render-plugin
           ref: master
-      ## cache dependencies
-      - name: Cache dependencies
-        uses: actions/cache@v1
-        with:
-          path: node_modules
-          key: ${{ runner.OS }}-build-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.OS }}-build-${{ env.cache-name }}-
-            ${{ runner.OS }}-build-
-            ${{ runner.OS }}-
       ## set up node.js
       - name: Set up node.js
         uses: actions/setup-node@v1
