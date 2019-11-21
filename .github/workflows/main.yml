@@ -20,6 +20,9 @@ jobs:
       ## install dependencies
       - name: Install dependencies
         run: npm install
+      - name: ls
+        run: ls
+        
       ## build npm package
       - name: Build package
         run: npm run build
