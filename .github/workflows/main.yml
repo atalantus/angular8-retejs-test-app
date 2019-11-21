@@ -3,12 +3,25 @@ name: CI Tests
 on: [push]
 
 jobs:
-  build:
-
+  build_custom_angular_render_plugin:
+    
     runs-on: ubuntu-latest
-
+    
     steps:
       - uses: actions/checkout@v1
+        with:
+          repository: atalantus/angular-render-plugin
+          ref: refs/head/master
+      ## cache dependencies
+      - name: Cache dependencies
+        uses: actions/cache@v1
+        with:
+          path: node_modules
+          key: ${{ runner.OS }}-build-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.OS }}-build-${{ env.cache-name }}-
+            ${{ runner.OS }}-build-
+            ${{ runner.OS }}-
       ## set up node.js
       - name: Set up node.js
         uses: actions/setup-node@v1
@@ -17,12 +30,40 @@ jobs:
       ## install dependencies
       - name: Install dependencies
         run: npm install
-      ## install custom angular-render-plugin
-      - name: Install custom angular-render-plugin dependency
-        run: npm install atalantus/angular-render-plugin
-      ## setup custom angular-render-plugin
-      - name: Setup custom angular-render-plugin
-        run: npm run setup-rete-lib
+      ## build npm package
+      - name: Build package
+        run: npm run build
+      ## Upload package as artifact
+      - name: Upload package
+        uses: actions/upload-artifact@v1
+        with:
+          name: angular-render-plugin
+          path: dist
+  
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      ## cache dependencies
+      - name: Cache dependencies
+        uses: actions/cache@v1
+        with:
+          path: node_modules
+          key: ${{ runner.OS }}-build-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.OS }}-build-${{ env.cache-name }}-
+            ${{ runner.OS }}-build-
+            ${{ runner.OS }}-
+      ## set up node.js
+      - name: Set up node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 13.1
+      ## install dependencies
+      - name: Install dependencies
+        run: npm install
       ## lint check
       - name: Run lint checks
         run: npm run lint
