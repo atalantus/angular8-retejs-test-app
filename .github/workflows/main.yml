@@ -11,7 +11,6 @@ jobs:
       - uses: actions/checkout@v1
         with:
           repository: atalantus/angular-render-plugin
-          ref: refs/head/master
       ## cache dependencies
       - name: Cache dependencies
         uses: actions/cache@v1
