@@ -19,13 +19,14 @@ jobs:
           node-version: 13.1
       ## install dependencies
       - name: Install dependencies
-        run: npm install
-      - name: ls
-        run: ls
-        
+        run: |
+          cd angular-render-plugin
+          npm install        
       ## build npm package
       - name: Build package
-        run: npm run build
+        run: |
+          cd angular-render-plugin
+          npm run build
       ## Upload package as artifact
       - name: Upload package
         uses: actions/upload-artifact@v1
