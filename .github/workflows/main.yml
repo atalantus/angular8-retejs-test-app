@@ -19,9 +19,12 @@ jobs:
           node-version: 13.1
       ## install dependencies
       - name: Install dependencies
+        run: npm install
+      - name: Print package.json
+        shell: bash
         run: |
-          cd angular-render-plugin
-          npm install        
+          value=`cat package.json`
+          echo $value
       ## build npm package
       - name: Build package
         run: |
