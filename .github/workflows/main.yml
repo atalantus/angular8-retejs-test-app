@@ -9,16 +9,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1
-      ## cache dependencies
-      - name: Cache dependencies
-        uses: actions/cache@v1
-        with:
-          path: node_modules
-          key: ${{ runner.OS }}-build-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.OS }}-build-${{ env.cache-name }}-
-            ${{ runner.OS }}-build-
-            ${{ runner.OS }}-
       ## set up node.js
       - name: Set up node.js
         uses: actions/setup-node@v1
@@ -27,6 +17,12 @@ jobs:
       ## install dependencies
       - name: Install dependencies
         run: npm install
+      ## install custom angular-render-plugin
+      - name: Install custom angular-render-plugin dependency
+        run: npm install atalantus/angular-render-plugin
+      ## setup custom angular-render-plugin
+      - name: Setup custom angular-render-plugin
+        run: npm run setup-rete-lib
       ## lint check
       - name: Run lint checks
         run: npm run lint
