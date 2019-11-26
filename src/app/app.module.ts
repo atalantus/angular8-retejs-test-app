@@ -8,7 +8,6 @@ import {NodeEditorComponent} from './components/node-editor/node-editor.componen
 import {MatToolbarModule} from '@angular/material';
 import {ReteComponent} from './rete/rete.component';
 import {NumberComponent} from './rete/controls/number-control';
-import {MyNodeComponent} from './rete/components/node/node.component';
 import {ReteModule} from 'rete-angular-render-plugin';
 
 @NgModule({
@@ -16,7 +15,6 @@ import {ReteModule} from 'rete-angular-render-plugin';
     AppComponent,
     ReteComponent,
     NumberComponent,
-    MyNodeComponent,
     NodeEditorComponent
   ],
   imports: [
@@ -28,7 +26,7 @@ import {ReteModule} from 'rete-angular-render-plugin';
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [NumberComponent, MyNodeComponent]
+  entryComponents: [NumberComponent]
 })
 export class AppModule {
 }
