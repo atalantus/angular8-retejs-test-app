@@ -1,6 +1,6 @@
-import {Component, AfterViewInit, ViewChild, ElementRef} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, ViewChild} from '@angular/core';
 
-import {NodeEditor, Engine} from 'rete';
+import {Engine, NodeEditor} from 'rete';
 import ConnectionPlugin from 'rete-connection-plugin';
 // import ContextMenuPlugin from 'rete-context-menu-plugin';
 import {NumComponent} from './components/number-component';

@@ -1,6 +1,6 @@
-import { Component, Input, Output, Node } from 'rete';
-import { numSocket } from '../sockets';
-import { NumControl } from '../controls/number-control';
+import {Component, Input, Output} from 'rete';
+import {numSocket} from '../sockets';
+import {NumControl} from '../controls/number-control';
 import {AngularComponent, AngularComponentData, NodeComponent} from 'rete-angular-render-plugin';
 
 export class AddComponent extends Component implements AngularComponent {

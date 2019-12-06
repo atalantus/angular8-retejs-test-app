@@ -1,6 +1,6 @@
-import { Component, Output } from 'rete';
-import { numSocket } from '../sockets';
-import { NumControl } from '../controls/number-control';
+import {Component, Output} from 'rete';
+import {numSocket} from '../sockets';
+import {NumControl} from '../controls/number-control';
 
 export class NumComponent extends Component {
 
