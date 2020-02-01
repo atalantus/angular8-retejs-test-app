@@ -2,7 +2,6 @@ import {AfterViewInit, Component, ElementRef, ViewChild} from '@angular/core';
 
 import {Engine, NodeEditor} from 'rete';
 import ConnectionPlugin from 'rete-connection-plugin';
-// import ContextMenuPlugin from 'rete-context-menu-plugin';
 import {NumComponent} from './components/number-component';
 import {AddComponent} from './components/add-component';
 import {AngularRenderPlugin} from 'rete-angular-render-plugin';
@@ -25,10 +24,11 @@ export class ReteComponent implements AfterViewInit {
 
     const editor = new NodeEditor('demo@0.2.0', container);
     editor.use(ConnectionPlugin);
+
     console.log(AngularRenderPlugin);
     console.log(require('rete-angular-render-plugin'));
-    editor.use(AngularRenderPlugin); // , { component: MyNodeComponent });
-    // editor.use(ContextMenuPlugin);
+
+    editor.use(AngularRenderPlugin);
 
     const engine = new Engine('demo@0.2.0');
 
