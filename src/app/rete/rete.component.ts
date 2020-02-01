@@ -25,6 +25,8 @@ export class ReteComponent implements AfterViewInit {
 
     const editor = new NodeEditor('demo@0.2.0', container);
     editor.use(ConnectionPlugin);
+    console.log(AngularRenderPlugin);
+    console.log(require('rete-angular-render-plugin'));
     editor.use(AngularRenderPlugin); // , { component: MyNodeComponent });
     // editor.use(ContextMenuPlugin);
 
